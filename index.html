@@ -3,99 +3,140 @@
 	<head>
 		<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
     	<style type="text/css">
-    		#main {
-    			background-color: LightGray;
-    			display: grid;
-    			grid-template-columns: 250px auto;
-    			grid-template-rows: auto 100px auto;
-    			grid-column-gap: 10px;
-    		}
+            a {
+                margin: 5px 10px 5px 10px;
+                text-decoration: none; 
+            }
 
-			a {
-				margin: 5px 10px 5px 10px;
-				text-decoration: none; 
-			}
+            h1 {
+                font-size: 30px;
+            }
 
-			#image {
-				width: 100%;
-			}
+            li {
+                margin-bottom: 10px;
+            }
 
-    		#menu {
-    			display: flex;
-    			flex-direction: column;
-				grid-area: 3/1/4/2;
-				justify-content: flex-start;
-				padding: 10px;
-    		}
+            #image {
+                max-width: 100%;
+                height: auto; 
+                display: block;
+                border-radius: 50%;
+            }
 
-    		#img-div {
-    			background-color: #00FFFF;
-    			grid-area: 1/1/2/2;
-    		}
+            #main {
+                display: grid;
+                font-family: 'Oswald', sans-serif;
+                grid-template-columns: 100%;
+                grid-template-rows: auto auto auto;
+                grid-template-areas:
+                    "menu_nav"
+                    "image_div"
+                    "tribute_info";
+                background-color: #cdc7ff;
+            }
 
-    		#title {
-    			background-color: #00FFFF;
-    			grid-area: 2/1/3/2;
-    			font-family: 'Oswald', sans-serif;
-    			text-align: center;
-    		}
+            #menu {
+                display: flex;
+                flex-direction: row;
+                grid-area: menu_nav;
+                justify-content: flex-start;
+                padding: 10px;
+                align-items: flex-start;
+                background-color: #cdc7ff;
+            }
 
-    		#tribute-info {
-    			background-color: #00FFFF;
-    			grid-area: 1/2/4/3;
-    			padding: 10px;
-    		}
+            #img-div {
+                grid-area: image_div;
+                background-color: whote;
+            }
 
-    		@media (max-width: 800px){
-			    #main {
-			      	grid-template-columns: auto;
-    				grid-template-rows: 50px 50px 250px auto;	
-				}
+            #tribute-info {
+                grid-area: tribute_info;
+                padding: 10px;
+                background-color: white;
+            }
 
-				#menu {
-    				display: flex;
-	    			flex-direction: row;
-					grid-area: 1/1/2/2;
-	    		}
+            @media (min-width: 768px){
+                #main {
+                    display: grid;
+                    font-family: 'Oswald', sans-serif;
+                    grid-template-columns: 250px auto;
+                    grid-template-rows: 250px auto;
+                    grid-template-areas: 
+                        "image_div tribute_info"
+                        "menu_nav tribute_info";
+                    background-color: #cdc7ff;
+                }
 
-	    		#img-div {
-	    			background-color: #00FFFF;
-	    			grid-area: 3/1/4/2;
-	    		}
+                #menu {
+                    display: flex;
+                    flex-direction: column;
+                    grid-area: menu_nav;
+                    justify-content: flex-start;
+                    padding: 10px;
+                    align-items: center;
+                    background-color: #cdc7ff;
+                }
 
-	    		#title {
-	    			background-color: #00AAFF;
-	    			grid-area: 2/1/3/2;
-	    		}
+                #img-div {
+                    grid-area: image_div;
+                    background-color: #cdc7ff;
+                }
 
-	    		#tribute-info {
-	    			background-color: #0077FF;
-	    			grid-area: 4/1/5/2;
-	    		}
-		    }
+                #tribute-info {
+                    grid-area: tribute_info;
+                    padding: 10px;
+                    background-color: white;
+                }
+            }
     	</style>
   	</head>
   	<body>
+        <!--https://images.thestar.com/xHBrK9slFeSPDKdrEdjvuVwFPcc=/1086x848/smart/filters:cb(2700061000)/https://www.thestar.com/content/dam/thestar/entertainment/television/2015/01/28/gumby-love-for-a-new-generation/gumby.jpg-->
     	<main id="main">
     		<nav id="menu">
-    			<a href="#" id="section_1">Sección 1</a>
-    			<a href="#" id="section_2">Sección 2</a>
+    			<a href="#history-header" id="section_1">History</a>
+    			<a href="#characters-header" id="section_2">Main Characters</a>
     			<a href="https://en.wikipedia.org/wiki/Gumby" id="tribute-link" target="_blank">More cool info!</a>	
     		</nav>
     		<figure id="img-div">
     			<img src="images/gumby.jpg" id="image" alt="">
-    			<figcaption id="img-caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</figcaption>
+    			<figcaption id="img-caption">Gumby's character is more than 60 years old</figcaption>
     		</figure>
-	    	<h1 id="title">Gumby</h1>
-			<section id="tribute-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed risus ultricies tristique nulla aliquet enim tortor. Gravida dictum fusce ut placerat orci nulla pellentesque dignissim. Morbi tempus iaculis urna id volutpat lacus laoreet non. Sed pulvinar proin gravida hendrerit. Non quam lacus suspendisse faucibus interdum posuere lorem ipsum. Felis bibendum ut tristique et egestas quis ipsum. Ac odio tempor orci dapibus ultrices in iaculis nunc. Facilisis mauris sit amet massa vitae. Quisque sagittis purus sit amet volutpat consequat. Tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum. Vel eros donec ac odio tempor orci dapibus ultrices. Et malesuada fames ac turpis egestas sed. Pellentesque elit eget gravida cum sociis. Sit amet tellus cras adipiscing enim eu turpis egestas.
+			<section id="tribute-info">
+                <h1 id="title">Gumby</h1>
+                <p>Gumby is a dark green clay figure created by <b>Art Clokey</b> in the early 1950s.  He was in 233 episodes on American television series. He has become well known as an example of stop motion clay animation. He has become a cultural icon. There have been many tributes and parodies, including a video game and toys.</p>
 
-Mauris nunc congue nisi vitae. Enim diam vulputate ut pharetra. Non sodales neque sodales ut etiam. Leo urna molestie at elementum eu facilisis sed odio. Non pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus. Ac ut consequat semper viverra nam libero justo laoreet. Suspendisse potenti nullam ac tortor vitae purus faucibus. Nibh venenatis cras sed felis eget. Leo vel orci porta non pulvinar neque. Integer vitae justo eget magna fermentum. Ornare quam viverra orci sagittis eu volutpat. Mauris augue neque gravida in fermentum. Tortor id aliquet lectus proin nibh. Imperdiet nulla malesuada pellentesque elit eget gravida. Faucibus vitae aliquet nec ullamcorper sit amet risus nullam eget. Tortor at risus viverra adipiscing. Egestas tellus rutrum tellus pellentesque eu tincidunt tortor. Erat nam at lectus urna duis convallis convallis tellus. Eget dolor morbi non arcu risus quis varius quam quisque. Neque viverra justo nec ultrices.
+                <h2 id="history-header">History</h2>
+                <ul>
+                    <li><b>1953:</b> first animated film, a 1953 three-minute student film called <b>Gumbasia</b>, a surreal montage of moving and expanding lumps of clay set to music in a parody of Disney's Fantasia. Gumbasia was created in the "kinesthetic" style taught by Clokey's USC professor Slavko Vorkapić, described as "massaging of the eye cells." Much of Gumby's look and feel was inspired by this technique of camera movements and editing.</li>
+                    <li><b>1955:</b> In 1955, Clokey showed Gumbasia to movie producer <b>Sam Engel</b>, who encouraged him to develop his technique by animating figures into children's stories. Clokey moved forward, producing a pilot episode featuring the character Gumby.</li>
+                    <li>The name "Gumby" came from the muddy clay found at Clokey's grandparents' farm that his family called "gumbo".</li>
+                    <li>In 1955 and 1956, 25 eleven-minute episodes aired on NBC.</li>
+                    <li><b>The Gumby Show</b> featured not only Clokey's puppet films, but also interviews and games.</li>
+                    <li>In 1959, The Gumby Show entered syndication, and more episodes were produced in the 1960s.</li>
+                    <li>The show ended in 1969.</li>
+                    <li>In 1987, the original Gumby shorts enjoyed a revival on home video. The following year, Gumby appeared in <b>The Puppetoon Movie</b>.</li>
+                    <li>This renewed interest led to a reincarnation of the series consisting of 99 new seven-minute episodes produced for television syndication in association with Lorimar-Telepictures in 1987</li>
+                    <li>In 1995, Clokey's production company produced an independently released theatrical film, <b>Gumby: The Movie</b>, marking the character's first feature-length adventure.</li>
+                    <li>On March 16, 2007, YouTube announced that all Gumby episodes would appear in their full-length form on its site, digitally remastered and with their original soundtracks.</li>
+                    <li>In 2012, Me-TV began airing Gumby on weekend morning, in its weekend morning animation block.The show remained part of the channel's programming until the end of the year.</li>
+                    <li>On April 8, 2015, it was announced that a new Gumby series was in the works, co-produced by the Jim Henson Company.</li>
+                </ul>
 
-Lobortis scelerisque fermentum dui faucibus in ornare. Porttitor lacus luctus accumsan tortor posuere ac ut. Est lorem ipsum dolor sit. Adipiscing elit ut aliquam purus sit amet luctus venenatis lectus. Ut porttitor leo a diam. Id semper risus in hendrerit gravida rutrum quisque. Leo a diam sollicitudin tempor id eu nisl nunc mi. Varius duis at consectetur lorem donec massa sapien faucibus et. Enim ut sem viverra aliquet. Enim eu turpis egestas pretium aenean pharetra magna ac placerat. Semper viverra nam libero justo laoreet sit amet.
-
-Nec dui nunc mattis enim. Magna sit amet purus gravida quis. Facilisi etiam dignissim diam quis enim. Tincidunt praesent semper feugiat nibh sed pulvinar proin gravida hendrerit. Ac tortor vitae purus faucibus ornare. Amet est placerat in egestas. Tellus pellentesque eu tincidunt tortor aliquam. Euismod quis viverra nibh cras. Dictum sit amet justo donec enim diam vulputate ut. Nisl purus in mollis nunc. Diam in arcu cursus euismod quis viverra nibh cras pulvinar. Amet consectetur adipiscing elit ut aliquam purus sit amet luctus. Nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit. Pharetra convallis posuere morbi leo urna molestie at elementum eu.
-
-Turpis egestas maecenas pharetra convallis posuere morbi leo. Sagittis eu volutpat odio facilisis mauris sit. Egestas pretium aenean pharetra magna. Auctor neque vitae tempus quam. Morbi tristique senectus et netus. Aenean euismod elementum nisi quis eleifend quam. Suscipit adipiscing bibendum est ultricies integer quis. Donec enim diam vulputate ut pharetra sit amet aliquam. Tortor at auctor urna nunc id. Eleifend donec pretium vulputate sapien. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Consectetur libero id faucibus nisl tincidunt eget nullam non. In massa tempor nec feugiat nisl pretium fusce.</section>
+                <h2 id="characters-header">Main Characters</h2>
+                <ul>
+                    <li><b>Pokey:</b> Gumby's main sidekick, it’s a talking orange pony.</li>
+                    <li><b>G and J Blockheads:</b> Gumby’s enemies.They are a pair of human-like, red-colored figures with block-shaped heads.</li>
+                    <li><b>Nopey:</b> Gumby’s dog.</li>
+                    <li><b>Prickle:</b> a yellow dinosaur who sometimes acts like a detective with pipe and hat like Sherlock Holmes.</li>
+                    <li><b>Goo:</b> a flying blue mermaid who spits blue goo balls and can change shape at will.</li>
+                    <li><b>Gumba and Gumbo:</b> Gumby’s parents.</li>
+                    <li><b>Minga:</b> Gumby's sister.</li>
+                    <li><b>Denali:</b> mastodon friend.</li>
+                    <li><b>Tilly:</b> chicken friend.</li>
+                </ul>
+            </section>
     	</main>
   	</body>
 </html>
